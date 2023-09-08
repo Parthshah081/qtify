@@ -1,0 +1,16 @@
+.container{
+    width: 100vw;
+    height: 270px;
+    margin-top: 50px;
+}
+
+.hero{
+    display: flex;
+    align-items: center;
+    background-color: var(--color-black);
+    justify-content: center;
+}
+
+.ad{
+    color: white;
+}
