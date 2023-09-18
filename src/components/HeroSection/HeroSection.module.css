@@ -9,8 +9,10 @@
     align-items: center;
     background-color: var(--color-black);
     justify-content: center;
+
 }
 
 .ad{
     color: white;
+    text-align: center;
 }
