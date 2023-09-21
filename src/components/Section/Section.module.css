@@ -1,0 +1,20 @@
+.cardWrapper{
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.toggleCards{
+    cursor: pointer;
+    color: var(--color-primary);
+}
+
+.container{
+    margin-top: 18px;
+}
