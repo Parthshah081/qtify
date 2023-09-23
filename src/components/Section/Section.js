@@ -1,31 +1,36 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styles from './Section.module.css'
-import { CircularProgress } from '@mui/material';
+import {Box, CircularProgress } from '@mui/material';
 import Card from '../Card/Card';
 import Carousel from '../Carousel/Carousel';
-const Section = ({title, data}) => {
-    const [topAlbumsToggle, setTopAlbumsToggle] = useState(true);
+import BasicTabs from '../Tabs/Tabs';
+
+const Section = ({title, data, type, filteredData=[], toggle=false, handleToggle=null, value=0, handleChange=null}) => {
     
-    const handleToggle = () => {
-        setTopAlbumsToggle(!topAlbumsToggle)
-    }
   return (
     <div>
         <div className={styles.header}>
           <h3>{title}</h3>
           <h4 className={styles.toggleCards} onClick={handleToggle}>
-            {topAlbumsToggle ? 'Show All' : 'Collapse All'}
+            {toggle ? 'Show All' : 'Collapse All'}
           </h4>
         </div>
+        {type === 'song'?<BasicTabs value={value} handleChange={handleChange}/>:null}
         {
-            !data.length?(
-                <CircularProgress/>
+            data.length === 0?(
+                <Box sx={{display:'flex', justifyContent:'center', alignItems:'center'}}>
+                    <CircularProgress/>
+                </Box>
             ):(<div className={styles.container}>
-                {!topAlbumsToggle ?
-                <div className={styles.cardWrapper}>
-                    {data.map((item) => <Card key={item.id} data={item} type='album'/>)}
+                {toggle ? <div className={styles.cardWrapper}>
+                    {filteredData.map(item => {
+                        return (
+                            <Card data={item} type={type}/>
+                          )
+                        })
+                    }  
                 </div>:(
-                  <Carousel data={data} cardRender={(data) => <Card data={data} type='album'/>}/>
+                  <Carousel data={filteredData} cardRender={(data) => <Card data={data} type={type}/>}/>
                 )
                 }
                 </div>

@@ -4,6 +4,7 @@ import styles from './Carousel.module.css';
 import CarouselLeftNav from './CarouselLeftNav';
 import CarouselRightNav from './CarouselRightNav';
 import 'swiper/css';
+import { Navigation } from 'swiper/modules';
 
 const Carousel = ({ data, cardRender }) => {
     const Controls = ({ data }) => {
@@ -18,7 +19,8 @@ const Carousel = ({ data, cardRender }) => {
         <div className={styles.carouselWrapper}>
             <Swiper 
             style={{ padding: '0px 20px' }} 
-            initialSlide={0} 
+            initialSlide={0}
+            modules={Navigation} 
             slidesPerView={'auto'}
             spaceBetween={40} 
             allowTouchMove

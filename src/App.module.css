@@ -1,0 +1,11 @@
+.cards{
+    display: flex;
+    gap: 10px;
+}
+
+.sections{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding: 0px 30px 60px;
+}
