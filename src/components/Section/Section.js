@@ -12,7 +12,7 @@ const Section = ({title, data, type, filteredData=[], toggle=false, handleToggle
         <div className={styles.header}>
           <h3>{title}</h3>
           <h4 className={styles.toggleCards} onClick={handleToggle}>
-            {toggle ? 'Show All' : 'Collapse All'}
+            {!toggle ? 'Show All' : 'Collapse All'}
           </h4>
         </div>
         {type === 'song'?<BasicTabs value={value} handleChange={handleChange}/>:null}
