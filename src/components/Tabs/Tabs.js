@@ -39,19 +39,19 @@ function a11yProps(index) {
   };
 }
 
-export default function BasicTabs() {
-  const [value, setValue] = React.useState(0);
+export default function BasicTabs({value, handleChange}) {
+//   const [value, setValue] = React.useState(0);
 
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
+//   const handleChange = (event, newValue) => {
+//     setValue(newValue);
+//   };
 
   return (
     <Box sx={{ width: '100%' }}>
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" textColor='' indicatorColor='secondary'>
           {tabLables.map((lable, index) => (
-            <Tab key={index} label={lable} {...a11yProps(index)}/>
+            <Tab label={lable} {...a11yProps(index)}/>
           ))}
         </Tabs>
       </Box>

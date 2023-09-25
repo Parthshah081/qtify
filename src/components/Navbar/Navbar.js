@@ -4,11 +4,11 @@ import Button from '../Button/Button';
 import Search from '../Search/Search';
 import styles from './Navbar.module.css';
 
-const Navbar = () => {
+const Navbar = ({data, onSearch}) => {
   return (
     <nav className={styles.navbar}>
        <Logo/>
-       <Search/>
+       <Search data={data} onSearch={onSearch}/>
        <Button children='Give Feedback'/>
     </nav>
   )

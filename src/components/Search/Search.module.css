@@ -12,6 +12,7 @@
     height: 100%;
     border: 1px solid var(--color-black);
     width: 502px;
+    flex-grow: 1;
 }
 
 .searchButton{
@@ -22,3 +23,14 @@
     border-left: none;
     cursor: pointer;
 }
+
+.suggestions{
+    position: absolute;
+    top: 60px;
+    background-color: var(--color-black);
+    cursor: pointer;
+    width: 773px;
+    margin: auto;
+    list-style: none;
+}
+

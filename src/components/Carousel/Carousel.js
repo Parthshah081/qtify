@@ -9,7 +9,7 @@ import { Navigation } from 'swiper/modules';
 const Carousel = ({ data, cardRender }) => {
     const Controls = ({ data }) => {
         const swiper = useSwiper();
-        console.log(swiper)
+        
         useEffect(() => {
             swiper.slideTo(0, null)
         }, [data, swiper])
